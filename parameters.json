@@ -1,0 +1,68 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "uaenorth"
+        },
+        "networkInterfaceName": {
+            "value": "linuxlearn373"
+        },
+        "networkSecurityGroupName": {
+            "value": "Linuxlearn-nsg"
+        },
+        "networkSecurityGroupRules": {
+            "value": [
+                {
+                    "name": "SSH",
+                    "properties": {
+                        "priority": 300,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "22"
+                    }
+                }
+            ]
+        },
+        "subnetName": {
+            "value": "default"
+        },
+        "virtualNetworkId": {
+            "value": "/subscriptions/ef4abf70-4e74-4460-be49-a3505287a586/resourceGroups/Day2-Rg/providers/Microsoft.Network/virtualNetworks/Day2-Rg-vnet"
+        },
+        "publicIpAddressName": {
+            "value": "Linuxlearn-ip"
+        },
+        "publicIpAddressType": {
+            "value": "Dynamic"
+        },
+        "publicIpAddressSku": {
+            "value": "Basic"
+        },
+        "virtualMachineName": {
+            "value": "Linuxlearn"
+        },
+        "virtualMachineComputerName": {
+            "value": "Linuxlearn"
+        },
+        "virtualMachineRG": {
+            "value": "Day2-Rg"
+        },
+        "osDiskType": {
+            "value": "Standard_LRS"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_DS1_v2"
+        },
+        "adminUsername": {
+            "value": "ubuntu"
+        },
+        "adminPassword": {
+            "value": null
+        }
+    }
+}
